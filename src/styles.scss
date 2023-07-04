@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+html,body{
+    box-sizing:border-box ;
+    background: #242A32;   
+         height: 100vh;
+    margin: 0 0  ;
+    padding: 0;
+    border: content-box;
+    contain: content;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    /* Diğer stil özelliklerini burada belirtebilirsiniz */
+  }
