@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { DetailComponent } from './detail/detail.component';
-import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule, Routes } from '@angular/router'; 
+
+const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent }
+];
 
 @NgModule({
   declarations: [
@@ -15,10 +20,10 @@ import { RouterModule, Routes } from '@angular/router';
     DetailComponent
   ],
   
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA  ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule.forRoot(routes) 
   ],
   providers: [],
   bootstrap: [AppComponent]
