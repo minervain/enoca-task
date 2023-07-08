@@ -1,0 +1,38 @@
+.card-group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    text-align: center;
+
+    &:after {
+        content: "";
+        flex: auto;
+    }
+
+
+}
+
+
+.card {
+    width: 300px;
+    position: relative;
+}
+
+div {
+    margin-top: 15px;
+}
+
+img {
+    width: 250px;
+    height: 200px;
+}
+
+.card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-text {
+    color: white;
+}

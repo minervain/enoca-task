@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>search</title>
-</head>
-<body>
-    <div class="input-container">
-        <input type="text" id="search"  [(ngModel)]="searchQuery" (ngModelChange)="searchMovies()" placeholder="Search" style="width: calc(100% - 20px); border: none;">
-        <i class="search-icon" (click)="searchMovies()">
-          <img src="../../assets/Search.svg" alt="si">
-        </i>
-      </div>
-     
-</body>
-</html>
+<div class="input-container">
+  <input type="text" id="search" [(ngModel)]="query" (ngModelChange)="searchMovies()" placeholder="Search"
+    style="width: calc(100% - 20px); border: none;">
+  <i class="search-icon" (click)="searchMovies()">
+    <img src="../../assets/Search.svg" alt="si">
+  </i>
+</div>
+
+<div *ngIf="searchResults.length > 0">
+  <app-card [searchResults]="searchResults"></app-card>
+</div>

@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router'; 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CardComponent } from './card/card.component';
 
 
 
@@ -21,7 +22,8 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     SearchComponent,
-    DetailComponent
+    DetailComponent,
+    CardComponent
   ],
   
   imports: [

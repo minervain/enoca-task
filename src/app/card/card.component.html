@@ -1,0 +1,9 @@
+
+<div class="card-group">
+  <div class="card" (click)="redirectToDetails(movie.id)" style="width: 18rem;" *ngFor="let movie of searchResults">
+    <img [src]="getImageUrl(movie.poster_path)" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">{{ movie.title }}</p>
+    </div>
+  </div>
+</div>

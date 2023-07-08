@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -7,19 +7,19 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
-  searchQuery: string | any;
-
+  query: string | any;
+  searchResults: any[] = [];
 
   constructor(private apiService: ApiService) { }
 
   searchMovies(): void {
-    this.apiService.query = this.searchQuery; // ApiService'deki query değişkenine arama sorgusunu ata
-    this.apiService.getData().subscribe(
+    this.apiService.query = this.query;
+    this.apiService.searchMovies(this.query).subscribe(
       (data: any) => {
-        console.log(data); // Verileri konsola yazdır
+        this.searchResults = data.results;
       },
       (error: any) => {
-        console.error(error); // Hata durumunda konsola yazdır
+        console.error(error);
       }
     );
   }
