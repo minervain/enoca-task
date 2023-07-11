@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs';
+import { tap,map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,12 +16,16 @@ export class ApiService {
     return this.http.get<any>("https://api.themoviedb.org/3/movie/popular?api_key=" + this.apiKey)
   }
 
+  
   getNowPlayingMovies() {
     return this.http.get<any>("https://api.themoviedb.org/3/movie/now_playing?api_key=" + this.apiKey)
   }
 
   getTopRatedgMovies() {
     return this.http.get<any>("https://api.themoviedb.org/3/movie/top_rated?api_key=" + this.apiKey)
+    .pipe(
+      map(response => response.results.slice(0, 4))
+    );
   }
 
   getPopularMovies() {

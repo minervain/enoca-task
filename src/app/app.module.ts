@@ -9,8 +9,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './card/card.component';
-
-
+import { TopcardsComponent } from './topcards/topcards.component';
+import { FooterComponent } from './footer/footer.component';
+ 
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -23,7 +24,9 @@ const routes: Routes = [
     HomeComponent,
     SearchComponent,
     DetailComponent,
-    CardComponent
+    CardComponent,
+    TopcardsComponent,
+    FooterComponent
   ],
   
   imports: [
