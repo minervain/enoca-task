@@ -1,6 +1,6 @@
 
-<div class="card-groupx">
-    <div class="cardx" style="width: 18rem;" *ngFor="let item of movies">
+<div class="card-groupx"  >
+    <div class="cardx" style="width: 18rem;" (click)="redirectToDetails(item.id)" *ngFor="let item of movies">
         <img [src]="getFullPosterUrl(item.poster_path)" class="card-img-top" alt="...">
         <div class="card-body">
           <p class="card-text">{{item.title}}</p>

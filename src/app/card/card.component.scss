@@ -3,6 +3,7 @@
     flex-flow: row wrap;
     justify-content: space-between;
     text-align: center;
+    position: relative;
 
     &:after {
         content: "";

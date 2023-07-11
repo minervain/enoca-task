@@ -8,7 +8,7 @@ import { ApiService } from '../services/api.service';
 })
 export class DetailComponent {
   movieId: string|any;
-  movieDetails: any; // Detayları tutan değişken
+  movieDetails: any[] = []; // Detayları tutan dizi
 
   constructor(private route: ActivatedRoute, private apiService: ApiService) {}
 
@@ -21,12 +21,20 @@ export class DetailComponent {
 
   getMovieDetails() {
     this.apiService.getDetailsById(this.movieId).subscribe(
-      (response) => {
-        this.movieDetails = response;
+      (response: any) => {
+        this.movieDetails = [response]; // Veriyi bir diziye dönüştürerek atayın
+        console.log(this.movieDetails);
       },
       (error) => {
         console.log(error);
       }
     );
   }
+  getImageUrl(posterPath: string) {
+    if (posterPath) {
+      return `https://image.tmdb.org/t/p/w500${posterPath}`;
+    }
+    return '../../assets/Ekran görüntüsü 2023-07-04 144127.png';
+  }
+
 }

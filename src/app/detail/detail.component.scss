@@ -1,0 +1,31 @@
+html,body{
+    height: 100vh;
+    width: 100%;
+}
+.container{
+    width: 50%;
+}
+.detail-image{
+    width: 100%;
+    height: 200px;
+    position: relative;
+}
+.detail-image2{
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    margin-top:25px ;
+    top: 50px;
+    left:2;
+
+}
+.detail{
+    color: white;
+}
+.detail-title{
+    margin-top: 35px;
+}
+.detail-info{
+    margin-top: 60px;
+    font-size: 2rem;
+}

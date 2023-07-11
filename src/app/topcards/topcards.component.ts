@@ -1,5 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { ApiService } from '../services/api.service';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-topcards',
@@ -9,7 +10,7 @@ import { ApiService } from '../services/api.service';
 export class TopcardsComponent {
   movies: any[] = [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private router:Router) {}
 
   ngOnInit() {
     this.apiService.getTopRatedgMovies().subscribe(
@@ -26,5 +27,10 @@ export class TopcardsComponent {
     getFullPosterUrl(posterPath: string): string {
       return 'https://image.tmdb.org/t/p/w500' + posterPath;
     }
+
+    
+  redirectToDetails(movieId: string) {
+    this.router.navigate(['/detail', movieId]);
+  }
   }
     

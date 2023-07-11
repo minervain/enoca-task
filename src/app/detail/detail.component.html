@@ -1,5 +1,22 @@
 <div *ngIf="movieDetails">
-    <h2>{{ movieDetails.title }}</h2>
-    <p>{{ movieDetails.description }}</p>
-    <!-- Diğer detayları gösteren HTML kodları -->
+  <div class="."  *ngFor="let item of movieDetails">
+    <img [src]="getImageUrl(item.backdrop_path)" alt="Örnek Görsel" class="detail-image">
+
+    <div class="detail">
+      <img [src]="getImageUrl(item.poster_path
+      )" alt="Örnek Görsel" class="detail-image2">
+      <h2 class="detail-title">{{item.title}}</h2>
+      <p class="detail-description">{{item.overview
+      }}.</p>
+      <div class="detail-info">
+        <span class="detail-date">Date: {{item.release_date}}</span>
+        <br>
+        <span class="detail-category">İmza: {{item.vote_count}}</span>
+        <br>
+        <span class="detail-category">İmdb: {{item.vote_average}}</span>
+      </div>
+    
+
+    </div>
   </div>
+</div>

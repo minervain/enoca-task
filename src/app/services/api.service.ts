@@ -24,7 +24,7 @@ export class ApiService {
   getTopRatedgMovies() {
     return this.http.get<any>("https://api.themoviedb.org/3/movie/top_rated?api_key=" + this.apiKey)
     .pipe(
-      map(response => response.results.slice(0, 4))
+      map(response => response.results.slice(0, 15))
     );
   }
 
